@@ -1,0 +1,24 @@
+{
+  "name": "The-M-Project-Enterprise-Bundles",
+  "version": "0.1.0",
+  "main": [
+    "./dist/*.js",
+    "./dist/*.css"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bundles",
+    "test",
+    "Gruntfile.js",
+    "*.sh",
+    "*.md",
+    "*.json",
+    "*.txt"
+  ],
+  "dependencies": {
+    "themproject": "2.0.0-beta"
+  },
+  "devDependencies": {}
+}

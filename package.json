@@ -1,0 +1,27 @@
+{
+  "name": "The-M-Project-Enterprise-Bundles",
+  "version": "0.1.0",
+  "description": "Bundles/plugins/add-ons",
+  "main": "Gruntfile.js",
+  "dependencies": {
+    "grunt": "~0.4.2",
+    "grunt-contrib-jshint": "~0.7.2",
+    "grunt-contrib-uglify": "~0.2.7",
+    "grunt-contrib-watch": "~0.5.3",
+    "grunt-contrib-concat": "~0.3.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mwaylabs/The-M-Project-Enterprise-Bundles"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mwaylabs/The-M-Project-Enterprise-Bundles/issues"
+  },
+  "homepage": "https://github.com/mwaylabs/The-M-Project-Enterprise-Bundles"
+}
