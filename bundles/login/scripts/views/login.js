@@ -117,10 +117,7 @@ M.LoginView = M.View.extend({
     _login: function() {
 
         // build the credentials
-        var credentials = {
-            user: this.childViews.user.getValue(),
-            password: this.childViews.password.getValue()
-        };
+        var credentials = this._getFormValues();
 
         // call the out login api
         if( this.login(credentials) ) {
@@ -130,6 +127,17 @@ M.LoginView = M.View.extend({
             // if the credentials are invalid
             this._onError(credentials);
         }
+    },
+
+    /**
+     * Overwrite this method to return the credentials from the view
+     * @param credentials
+    */  
+    _getFormValues: function(){
+        return {
+            user: this.childViews.user.getValue(),
+            password: this.childViews.password.getValue()
+        };
     },
 
     /**
@@ -210,37 +218,3 @@ M.LoginView = M.View.extend({
     })
 
 });
-
-/*global kitchensink*/
-
-kitchensink.Views = kitchensink.Views || {};
-
-(function() {
-    'use strict';
-
-    kitchensink.Views.StartScreenView = M.View.extend({
-
-    }, {
-
-        // Menu hint
-        menuHint: M.TextView.extend({
-            value: 'Drag from left to open up the menu or tab on this text',
-            grid: 'col-xs-12',
-            cssClass: 'center-text',
-            icon: 'fa-exchange',
-            events: {
-                tap: 'toggleMenu'
-            }
-        }),
-
-        // Debug hint
-        info: M.TextView.extend({
-            value: 'Shake to toggle the DebugView',
-            grid: 'col-xs-12',
-            cssClass: 'stencil',
-            icon: 'fa-bug'
-        })
-
-    });
-
-})();
