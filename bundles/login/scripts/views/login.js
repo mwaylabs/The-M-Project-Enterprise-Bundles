@@ -63,6 +63,14 @@ M.LoginView = M.View.extend({
     grid: 'col-xs-12',
 
     /**
+     * The model for the login
+     */
+    value: M.Model.create({
+        user: '',
+        password: ''
+    }),
+
+    /**
      * Initialize the view
      */
     initialize: function() {
@@ -108,6 +116,7 @@ M.LoginView = M.View.extend({
         // overwrite the loginButton view
         this._childViews.loginButton = this._childViews.loginButton.extend(loginButtonExtend);
 
+        M.View.prototype.initialize.apply(this, arguments);
     },
 
     /**
@@ -132,7 +141,7 @@ M.LoginView = M.View.extend({
     /**
      * Overwrite this method to return the credentials from the view
      * @param credentials
-    */  
+     */
     _getFormValues: function(){
         return {
             user: this.childViews.user.getValue(),
@@ -187,6 +196,8 @@ M.LoginView = M.View.extend({
      * The username input
      */
     user: M.TextfieldView.extend({
+        useParentValue: YES,
+        extendTemplate: '<%= user %>',
         placeholder: 'Username',
         label: 'Username',
         events: {
@@ -198,6 +209,8 @@ M.LoginView = M.View.extend({
      * The password input
      */
     password: M.TextfieldView.extend({
+        useParentValue: YES,
+        extendTemplate: '<%= password %>',
         type: 'password',
         label: 'Password',
         placeholder: 'Password',
